@@ -1,0 +1,60 @@
+
+
+// bower:css
+@import "../bower_components/normalize.css/normalize.css";
+@import "../bower_components/angular-material/angular-material.css";
+// endbower
+
+
+body {
+	padding: 2em;
+
+	table {
+		border: solid grey 0.1em;
+		position: relative;
+		width: 100%;
+		margin-bottom: 2em;
+
+		td {
+			padding: 0.5em;
+			height: 1em;
+		}
+
+		.even {
+			background-color: grey;
+		}
+
+		.titleCol {
+			width: 50%;
+		}
+
+		.favCol {
+			width: 10%;
+		}
+
+		.quantityCol {
+			width: 5%;
+		}
+
+		.linkCol {
+			width: 5%;
+		}
+
+		.arrow {
+			display: inline-block;
+		}
+
+		input {
+			position: relative;
+			right: 0;
+			top: 0;
+		}
+		.table-name {
+		padding-right: 4em;
+
+			.even {
+				background-color: lightgrey;
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Fancy Tab - Day 29</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+  <body ng-app="app">
+    <div ng-controller="AppCtrl">
+      <table>
+        <tr>
+          <td class="table-name"><strong>Etsy</strong></td>
+          <td></td>
+          <td></td>
+          <td>
+            <input name="searchText" placeholder="filter" ng-model="searchText" type="text">
+          </td>
+        </tr>
+        <tr>
+          <td class="titleCol" ng-click="reverseOrder()">Title
+            <div ng-show="upArrow" class="arrow">
+              &#x25B2
+            </div>
+            <div ng-show="!upArrow" class="arrow">
+              &#x25BC
+            </div>
+          </td>
+          <td class="favCol" ng-click="reverseOrder()">Number of Favorites
+            <div ng-show="upArrow" class="arrow">
+              &#x25B2
+            </div>
+            <div ng-show="!upArrow" class="arrow">
+              &#x25BC
+            </div>
+          </td>
+          <td class="quantityCol">Quantity</td>
+          <td class="linkCol">Link to Product</td>
+        </tr>
+        <tr ng-repeat="listing in changedList" ng-class-even="'even'">
+          <td>{{listing.title}}</td>
+          <td>{{listing.num_favorers}}</td>
+          <td>{{listing.quantity}}</td>
+          <td><a ng-href="{{listing.url}}">link</a></td>
+        </tr>
+      </table>
+
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/lodash/lodash.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
