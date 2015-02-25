@@ -1,5 +1,5 @@
 angular.module('app', ['app.services'])
-.controller('AppCtrl', function($scope, $http, Reverse) {
+.controller('AppCtrl', function($scope, $http) {
 
 	$scope.getResponse = [];
 	$scope.changedList = [];
@@ -33,6 +33,9 @@ angular.module('app', ['app.services'])
 	 			}
 		});
 
-	 	$scope.reverseOrder = Reverse();
+		$scope.reverseOrder = function() {
+			$scope.getResponse.reverse();
+			$scope.upArrow = !$scope.upArrow;
+		};
 
 });
