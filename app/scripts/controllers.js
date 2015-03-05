@@ -8,10 +8,16 @@ angular.module('app', ['app.services'])
 
   $http.get("https://openapi.etsy.com/v2/listings/active?api_key=48odg3jjgzka7c9v6lk86chk")
   .success(function(response) {
-
+  	// console.log(response.results[i].num_favorers);
   	$scope.getResponse = _.sortBy(response.results, function(element){
   		return element.title;
   	});
+
+  	$scope.favResponse = _.sortBy(response.results, function(element) {
+  		return element.num_favorers;
+  	});
+
+
 
   	$scope.changedList = $scope.getResponse;
 
@@ -34,8 +40,15 @@ angular.module('app', ['app.services'])
 		});
 
 		$scope.reverseOrder = function() {
+			$scope.changedList = $scope.getResponse;
 			$scope.getResponse.reverse();
 			$scope.upArrow = !$scope.upArrow;
+		};
+
+		$scope.reverseFav = function() {
+			$scope.changedList = $scope.favResponse;
+			$scope.favResponse.reverse();
+
 		};
 
 });
